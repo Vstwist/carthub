@@ -12,7 +12,7 @@ function Navbar() {
 
   return (
     <header>
-      <h1>CartHub</h1>
+      <h1>V's Twist</h1>
 
       <nav>
         <Link to="/products">

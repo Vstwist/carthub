@@ -23,7 +23,7 @@ app.use("/api/orders", orderRoutes);
 
 
 app.get("/", (req, res) => {
-    res.send("Welcome to CartHub Backend!");
+    res.send("Welcome to V's Twist Backend!");
 });
 
 const PORT = 5000;

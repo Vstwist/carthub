@@ -29,7 +29,7 @@ function OrderSuccess() {
         </h1>
 
         <p style={{ marginTop: "20px", fontSize: "18px" }}>
-          Thank you for shopping with <b>CartHub</b>.
+          Thank you for shopping with <b>V's Twist</b>.
         </p>
 
         <p>

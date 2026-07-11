@@ -8,7 +8,7 @@ function Home() {
         marginTop: "80px",
       }}
     >
-      <h1>Welcome to CartHub</h1>
+      <h1>Welcome to V's Twist</h1>
 
       <p>
         Discover beautiful handmade Pipe Cleaner Art.
