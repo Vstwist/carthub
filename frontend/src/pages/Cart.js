@@ -10,7 +10,7 @@ function Cart() {
 
   const fetchCart = () => {
     axios
-      .get(`http://localhost:5000/api/cart/${user.id}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/cart/${user.id}`)
       .then((response) => {
         setCart(response.data);
       })
@@ -27,7 +27,7 @@ function Cart() {
 
   const increaseQuantity = (id) => {
     axios
-      .put(`http://localhost:5000/api/cart/increase/${id}`)
+    .put(`${process.env.REACT_APP_API_URL}/api/cart/increase/${id}`)
       .then(() => {
         fetchCart();
       });
@@ -35,7 +35,7 @@ function Cart() {
 
   const decreaseQuantity = (id) => {
     axios
-      .put(`http://localhost:5000/api/cart/decrease/${id}`)
+      .put(`${process.env.REACT_APP_API_URL}/api/cart/decrease/${id}`)
       .then(() => {
         fetchCart();
       });
@@ -43,7 +43,7 @@ function Cart() {
 
   const removeItem = (id) => {
     axios
-      .delete(`http://localhost:5000/api/cart/remove/${id}`)
+    .delete(`${process.env.REACT_APP_API_URL}/api/cart/remove/${id}`)
       .then(() => {
         fetchCart();
       });
@@ -85,7 +85,7 @@ function Cart() {
               }}
             >
               <img
-                src={`http://localhost:5000/uploads/${item.image}`}
+                src={`${process.env.REACT_APP_API_URL}/uploads/${item.image}`}
                 alt={item.name}
                 style={{
                   width: "150px",

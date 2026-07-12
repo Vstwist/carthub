@@ -17,7 +17,7 @@ function AddProduct() {
     formData.append("image", image);
 
     const response = await axios.post(
-      "http://localhost:5000/api/products/add",
+        `${process.env.REACT_APP_API_URL}/api/products/add`,
       formData,
       {
         headers: {

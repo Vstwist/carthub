@@ -30,7 +30,7 @@ function Products() {
     }
 
     const response = await axios.post(
-      "http://localhost:5000/api/cart/add",
+        `${process.env.REACT_APP_API_URL}/api/cart/add`,
       {
         user_id: user.id,
         product_id: productId,
@@ -52,7 +52,9 @@ function Products() {
 
   try {
     const response = await axios.delete(
-      `http://localhost:5000/api/products/${id}`
+       `${process.env.REACT_APP_API_URL}/api/cart/remove/${id}`
+
+      
     );
 
     alert(response.data.message);

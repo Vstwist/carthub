@@ -30,7 +30,7 @@ function Checkout() {
     }
 
     axios
-      .get(`http://localhost:5000/api/cart/${user.id}`)
+    .get(`${process.env.REACT_APP_API_URL}/api/cart/${user.id}`)
       .then((res) => {
         setCart(res.data);
       })
@@ -81,7 +81,7 @@ function Checkout() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:5000/api/orders/place",
+        `${process.env.REACT_APP_API_URL}/api/orders/place`
         {
           user_id: user.id,
 
