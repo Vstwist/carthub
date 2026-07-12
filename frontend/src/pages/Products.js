@@ -7,7 +7,7 @@ function Products() {
 
   const fetchProducts = () => {
     axios
-    .get("http://localhost:5000/api/products")
+    .get(`${process.env.REACT_APP_API_URL}/api/products`)
     .then((response) => {
       setProducts(response.data);
     })
@@ -87,11 +87,11 @@ function Products() {
             }}
           >
             <img
-            src={`http://localhost:5000/uploads/${product.image}`}
-            alt={product.name}
-            style={{ width: "100%", height: "200px", objectFit: "cover", borderRadius: "10px" }}
-            />
-            
+             src={`${process.env.REACT_APP_API_URL}/uploads/${product.image}`}
+             alt={product.name}
+             style={{ width: "100%", height: "200px", objectFit: "cover", borderRadius: "10px" }}
+             />  
+          
 
             <h3>{product.name}</h3>
 
