@@ -81,8 +81,8 @@ function Checkout() {
       setLoading(true);
 
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/orders/place`
-        {
+        `${process.env.REACT_APP_API_URL}/api/orders/place`,
+        {      
           user_id: user.id,
 
           customer_name: formData.customer_name,
