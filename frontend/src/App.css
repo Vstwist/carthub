@@ -1,38 +1,95 @@
+/* App Global Utilities and Responsiveness */
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes slideRight {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* Navbar Responsiveness */
+@media (max-width: 768px) {
+  /* Hide desktop menu links */
+  header nav {
+    display: none !important;
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Show hamburger button */
+  header button[aria-label="Toggle Menu"] {
+    display: block !important;
   }
+}
+
+/* Hover Underline Animations for Header links */
+header nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+header nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+header nav a:hover {
+  color: var(--primary) !important;
+}
+
+/* Product Card lift effect */
+.product-card {
+  background: var(--background);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.product-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.product-card:hover .product-image-wrapper img {
+  transform: scale(1.06);
+}
+
+/* Scrollbar tweaks */
+html {
+  scroll-behavior: smooth;
 }
